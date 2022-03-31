@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>管理員介面</title>
+    <!-- Bootstrap core CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-success d-flex align-items-center">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">違停首頁</a>     
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">歡迎使用者 : {{ user }}</h1>
+        <p class="lead text-muted">歡迎使用成功大學違規停車檢舉系統</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="mb-3" style="padding-left: 5%; padding-right: 5%;">
+    <label for="exampleFormControlInput1" class="form-label">地點</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="A區地下室">
+  </div>
+  <div class="mb-3" style="padding-left: 5%; padding-right: 5%;">
+    <label for="exampleFormControlTextarea1" class="form-label">詳細敘述</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+  </div>
+
+  <div class="mb-3" style="padding-left: 5%; padding-right: 5%;">
+    <input type="file" class="form-control form-control-lg" aria-label="Large file input example">
+  </div>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <p>
+          <a href="/" class="btn btn-primary my-2">確認上傳</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">回到最上面</a>
+    </p>
+    <p>&copy; UIUX_2022<a href="#"></p>
+  </div>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>

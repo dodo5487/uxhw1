@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>成功大學違停檢舉系統</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet">
+  </head>
+  <body>
+    
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-success d-flex align-items-center" >
+    <div class="container-fluid" >
+      <a class="navbar-brand" href="https://www.ncku.edu.tw/">成功大學</a>     
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="login">登入</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link active" href="#">個人首頁</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link active" href="#">最新消息</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link active" href="#">聯絡資訊</a>
+          </li>          
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>    
+</header>
+
+<main>
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>恭喜狗狗榮升停車場總管理員</h1>
+            <p>由於狗狗績效優良，抓了很多違停的小王八蛋，特此晉升為停車場總管理員</p>
+            <p><a class="btn btn-lg btn-primary" href="#">查看詳細資訊</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>車牌為"MQU-0733"的車主，已違規停車2次。</h1>
+            <p>請至繳費機繳完罰款後，至管理室領取違規停車的車子</p>
+            <p><a class="btn btn-lg btn-primary" href="#">查看詳細資訊</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>車牌為"XYZ-987"的車主，已違規停車7次。</h1>
+            <p>請先至繳費機結清罰款，再前往管理室領取電子鎖密碼取車。</p>
+            <p><a class="btn btn-lg btn-primary" href="https://www.facebook.com/2203rchord420">查看此車主相關資訊</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="{{url_for('static', filename='img/godpoor.png')}}" width="140" height="140">
+
+        <h2>一般學生</h2>
+        <p>每學年初持相關證明至軍訓室<br>申請停車證。</p>
+        <p><a class="btn btn-secondary" href="https://www.facebook.com/capoocat">查看詳細資訊 &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="{{url_for('static', filename='img/too.png')}}" width="140" height="140">
+
+        <h2>學生稽查員</h2>
+        <p>稽查各停車場違規事項，並協助管理員<br>處理代辦案件。</p>
+        <p><a class="btn btn-secondary" href="#">查看詳細資訊 &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="{{url_for('static', filename='img/dog.png')}}" width="140" height="140">
+
+        <h2>停車場管理員</h2>
+        <p>處理違規事項及取車事宜，維持<br>停車場正常運作</p>
+        <p><a class="btn btn-secondary" href="#">查看詳細資訊 &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">機車停車場施工公告</h2>
+        <p class="lead">本停車場將於 4/10(日) 7:00 - 4/10(日) 18:00 <br>進行場地整平作業，敬請各位車主將您的愛車移動到別處，謝謝配合。</p>
+      </div>
+      <div class="col-md-5">
+        <img src="{{url_for('static', filename='img/set.png')}}" width="500" height="500">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">回到最上面</a></p>
+    <p>&copy; NCKU_2022<a href="#"></p>
+    <li>
+      <p>NCKU_2022<a href="#"></p>
+      <p>NCKU_2022<a href="#"></p>
+      <p>NCKU_2022<a href="#"></p>
+    </li>
+  </footer>
+</main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>

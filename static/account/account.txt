@@ -1,0 +1,7 @@
+[
+    {"name":"godpoor","password":"1234","position":"user"},
+    {"name":"dog","password":"1234","position":"admin"},
+    {"name":"jee8","password":"1234","position":"user"}
+]
+root
+vM6V8rHqAy1bNjGp
