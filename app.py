@@ -26,36 +26,44 @@ def login():
 @app.route("/handle",methods=["POST"])
 def handle():
     
-    name = request.form["usr"]
+    student_id = request.form["usr"]
     password = request.form["pwd"]
-    position = db.login(name,password)
+    dict = db.login(student_id,password) # 從資料庫回傳使用者資料 dict
+    position = dict["position"]
     if position != "": 
         if position == "user":
-            session[f"{name}"] = name
-            return redirect(f"/user/{name}")
+            session["id"] = student_id
+            session["name"] = dict["name"]
+            session["car"] = dict["car"]
+            session["until"] = dict["until"]
+            session["picture"] = dict["picture"]
+            return redirect(f"/user/{student_id}")
         if position == "admin":
-            session[f"{name}"] = name
-            return redirect(f"/admin/{name}")
+            session["id"] = student_id
+            session["name"] = dict["name"]
+            return redirect(f"/admin/{student_id}")
     else:
         return redirect("/login")
 
-@app.route("/user/<name>") # 搭配 session 來使用
-def user(name):
-    if name in session:
-        return render_template("user.html", user = name)  
-    else:
+@app.route("/user/<student_id>") # 搭配 session 來使用
+def user(student_id):
+    try:
+        if session["id"] == student_id:
+            return render_template("user_page.html", student_id = student_id , name = session["name"] , picture = session["picture"])  
+    except:
         return redirect("/")
 
-@app.route("/admin/<name>")
-def admin(name):
-    if name in session:
-        return render_template("admin.html", user = name)  
-    else:
+@app.route("/admin/<student_id>")
+def admin(student_id):
+    try:
+        if session["id"] == student_id:
+            return render_template("admin.html", student_id = student_id)  
+    except:
         return redirect("/")
 
 @app.route("/signout")
 def signout(name):
-    # 移除 Session 中的會員資訊
+    # 移除 Session 中的會員資訊 
     del session[f"{name}"]
     return redirect("/")
 
