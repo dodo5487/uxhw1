@@ -1,7 +1,6 @@
-import re
 from flask import Flask , request ,session
 from flask import render_template , redirect , url_for
-import json , ast , time , db
+import db
 
 app = Flask(
     __name__,
@@ -37,10 +36,13 @@ def handle():
             session["car"] = dict["car"]
             session["until"] = dict["until"]
             session["picture"] = dict["picture"]
+            session["position"] = dict["position"]
             return redirect(f"/user/{student_id}")
         if position == "admin":
             session["id"] = student_id
             session["name"] = dict["name"]
+            session["picture"] = dict["picture"]
+            session["position"] = dict["position"]
             return redirect(f"/admin/{student_id}")
     else:
         return redirect("/login")
@@ -49,24 +51,53 @@ def handle():
 def user(student_id):
     try:
         if session["id"] == student_id:
-            return render_template("user_page.html", student_id = student_id , name = session["name"] , picture = session["picture"])  
+            return render_template("user_page.html", student_id = student_id , name = session["name"] , picture = session["picture"],car = session["car"], until = session["until"])  
     except:
         return redirect("/")
+
+@app.route("/report") # 搭配 session 來使用
+def report():
+    try:
+        name = session["name"]
+        if session["id"] != None:
+            return render_template("report.html" , name = name)  
+    except:
+        return redirect("/")
+
+
+@app.route("/violate")
+def violate():
+    return render_template("violate.html")
+
+@app.route("/lock")
+def lock():
+    return render_template("lock.html")
 
 @app.route("/admin/<student_id>")
 def admin(student_id):
     try:
         if session["id"] == student_id:
-            return render_template("admin.html", student_id = student_id)  
+            return render_template("admin_page.html", name = session["name"], picture = session["picture"])  
     except:
         return redirect("/")
 
 @app.route("/signout")
-def signout(name):
+def signout():
     # 移除 Session 中的會員資訊 
-    del session[f"{name}"]
+    session["id"] = None
+    session["name"] = None
+    session["car"] = None
+    session["until"] = None
+    session["picture"] = None
+    session["position"] = None
     return redirect("/")
 
+@app.route("/success")
+def success():
+    if session["position"] == "user":
+        return render_template("success.html")
+    else :
+        return render_template("successa.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

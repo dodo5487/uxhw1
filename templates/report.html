@@ -42,10 +42,10 @@
           </li>          
           <li class="nav-item">
             <a class="nav-link active" href="#">聯絡資訊</a>
-          </li>  
+          </li>
           <li class="nav-item">
             <a class="nav-link active" href="/signout">登出</a>
-          </li>         
+          </li>            
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -57,38 +57,46 @@
 </header>
 
 <main>
+    <div><br><br><br><br></div>
+    <div style="text-align: center;">
+    <h3>您好: {{name}} <br> 歡迎使用成功大學機車違停檢舉系統</h3>
+    </div>
+  <div class="mb-3" style="padding-left: 5%; padding-right: 5%;">
+    <label for="exampleFormControlInput1" class="form-label">地點:
+    </label>
+<div>
+    <select>
+        <option>請選擇地點</option>
+        <option>A區地下室</option>
+        <option>B區地下室</option>
+        <option>C區地下室</option>
+        <option>D區地下室</option>
+        <option>E區地下室</option>
+        <option>F區地下室</option>
+    </select>
+</div>
+    
+  </div>
+  <div class="mb-3" style="padding-left: 5%; padding-right: 5%;">
+    <label for="exampleFormControlTextarea1" class="form-label">詳細敘述:</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+  </div>
 
-  <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <img src= {{ picture }} class="d-block mx-lg-auto img-fluid" >
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-6 fw-bold lh-2 mb-3">{{name}}-學生<br>{{student_id}}</h1>
-        <div class="card">
-          <div class="card-header" style="background-color: seagreen ; color: #FFF;">
-            {{ car }}
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">停車證效期</h5>
-            <p class="card-text">- {{until}}</p>
-            <h5 class="card-title">違規次數: &nbsp&nbsp 0</h5>
-          </div>
-        </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          </div>
+  <div class="mb-3" style="padding-left: 5%; padding-right: 5%;">
+    <input type="file" class="form-control form-control-lg" aria-label="Large file input example">
+  </div>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <p>
+          <a href="/success" class="btn btn-primary my-2">確認上傳</a>
+        </p>
       </div>
     </div>
-  </div>
-  <div style="text-align: center;">
-    <a href="/report" class="btn btn-danger my-2">我要檢舉</a>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br>
-  </div>
-
-  
-
+  </section>
 
 </main>
+
 <div class="d-flex justify-content-between py-4 my-4 border-top"></div>
 <div class="container">
   <footer class="py-5">

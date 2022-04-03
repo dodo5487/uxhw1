@@ -42,10 +42,10 @@
           </li>          
           <li class="nav-item">
             <a class="nav-link active" href="#">聯絡資訊</a>
-          </li>  
+          </li>
           <li class="nav-item">
             <a class="nav-link active" href="/signout">登出</a>
-          </li>         
+          </li>            
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -57,38 +57,14 @@
 </header>
 
 <main>
-
-  <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <img src= {{ picture }} class="d-block mx-lg-auto img-fluid" >
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-6 fw-bold lh-2 mb-3">{{name}}-學生<br>{{student_id}}</h1>
-        <div class="card">
-          <div class="card-header" style="background-color: seagreen ; color: #FFF;">
-            {{ car }}
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">停車證效期</h5>
-            <p class="card-text">- {{until}}</p>
-            <h5 class="card-title">違規次數: &nbsp&nbsp 0</h5>
-          </div>
+    <div><br><br><br><br><br></div>
+    <div class="card center" style="text-align: center;">
+        <img style="margin-left: auto; margin-right: auto;" src="{{url_for('static', filename='img/success.png')}}" width="20%" height="20%">
+          <h1><br><br>處裡完成</h1> 
         </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          </div>
-      </div>
-    </div>
-  </div>
-  <div style="text-align: center;">
-    <a href="/report" class="btn btn-danger my-2">我要檢舉</a>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br>
-  </div>
-
-  
-
 
 </main>
+
 <div class="d-flex justify-content-between py-4 my-4 border-top"></div>
 <div class="container">
   <footer class="py-5">
